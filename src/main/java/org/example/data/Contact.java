@@ -23,7 +23,7 @@ public class Contact {
 
             writer.write("\n" + name + " " + phoneNumber);
             writer.close();
-            System.out.print("Контакт успешно добавлен");
+            System.out.print("Контакт успешно добавлен.");
         } catch (IOException e) {
             System.out.println("Ошибка: " + e.getMessage());
         }
