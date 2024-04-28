@@ -10,8 +10,6 @@ public class Contact {
     private String name;
     private String phoneNumber;
 
-
-
     // Добавить контакт в базу данных
     public void setContact(){
         Scanner sc = new Scanner(System.in);

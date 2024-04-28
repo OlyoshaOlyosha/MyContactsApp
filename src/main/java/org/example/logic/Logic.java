@@ -1,6 +1,6 @@
 package org.example.logic;
 
-import org.example.data.Dao;
+import org.example.app.Dao;
 import org.example.data.Contacts;
 import org.example.data.Contact;
 
@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Logic {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Dao d = new Dao();
         Contacts cts = new Contacts();
         Contact ct = new Contact();
 
@@ -30,12 +29,12 @@ public class Logic {
                     ct.setContact();
                     break;
                 case 4:
-                    // Вход
-                    d.loginAdmin();
+                    // Вход в панель администратора
+                    Dao.connectToData();
                     break;
                 case 5:
                     // Выход из программы
-                    System.out.println("Досвидание");
+                    System.out.println("До свидания!");
                     System.exit(0);
             }
         }

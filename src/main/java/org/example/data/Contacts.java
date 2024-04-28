@@ -39,16 +39,12 @@ public class Contacts {
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(".\\src\\main\\java\\org\\example\\data\\dataStorage.txt"));
-            String line = reader.readLine();
-            int i = 1;
-            while (line != null) {
-                line = reader.readLine();
+            String line;
+            while ((line = reader.readLine()) != null) {
                 if (line.contains(contactNameOrNumber)){
                     callContact(line);
                     break;
                 }
-
-                i ++;
             }
             reader.close();
         } catch (IOException e) {
@@ -61,11 +57,10 @@ public class Contacts {
     // Позвонить контакту
     public void callContact(String contact){
         Random rd = new Random();
-        ConsoleTimer ctimer = new ConsoleTimer();
         System.out.println("Звоним контакту: " + contact);
 
         int timer = 5;
-        ctimer.startTimer(timer);
+        ConsoleTimer.startTimer(timer);
 
         // Ожидание завершения таймера
         try {
@@ -78,12 +73,11 @@ public class Contacts {
 
         int endIndexNumber = contact.indexOf('+');
         String nameContact = contact.substring(0, endIndexNumber);
-        if (pickedPhone == true){
+        if (pickedPhone){
             System.out.println("\nПользователь " + nameContact + "взял трубку.");
         }
         else{
             System.out.println("\nПользователь " + nameContact + "не взял трубку.");
         }
     }
-
 }

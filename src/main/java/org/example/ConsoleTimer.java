@@ -1,15 +1,12 @@
 package org.example;
-import java.util.Scanner;
-public class Main {
+// import java.util.Scanner;
+public class ConsoleTimer {
     private static final int PROGRESS_BAR_WIDTH = 50;
-    public static void main(String[] args) {
-        int timer = getValidTimerValue();
-        startTimer(timer);
-    }
 
+    /*
     public static int getValidTimerValue() {
         Scanner sc = new Scanner(System.in);
-        int timer = 0;
+        int timer;
         while (true) {
             System.out.print("Допустимое значение таймера: ");
             try {
@@ -27,6 +24,7 @@ public class Main {
         sc.close();
         return timer;
     }
+     */
 
     public static Thread startTimer(int timer){
         Thread thread = new Thread(() -> {
@@ -47,7 +45,6 @@ public class Main {
         });
         thread.start();
         return thread;
-
     }
 
     private static String getProgressBar(float progress) {
