@@ -1,17 +1,14 @@
 package org.example;
 import java.util.Scanner;
-public class Main {
+
+public class ConsoleTimer {
     private static final int PROGRESS_BAR_WIDTH = 50;
-    public static void main(String[] args) {
-        int timer = getValidTimerValue();
-        startTimer(timer);
-    }
 
     public static int getValidTimerValue() {
         Scanner sc = new Scanner(System.in);
         int timer = 0;
         while (true) {
-            System.out.print("Допустимое значение таймера: ");
+            System.out.print("\nДопустимое значение таймера: ");
             try {
                 timer = sc.nextInt();
                 if (timer > 0) {
